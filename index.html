@@ -7,10 +7,9 @@
     <script src="/jquery-photos/js/jquery/jquery.min.js"></script>
     <script src="https://unpkg.com/art-template@4.13.2/lib/template-web.js"></script>
     <script src="/jquery-photos/js/layer/layer.js"></script>
-    <script src="/jquery-photos/js/site-ajax.js"></script>
+    <script src="/jquery-photos/js/ddsort.js"></script>
     <script src="/jquery-photos/js/file.library/file.library.js"></script>
     <script src="/jquery-photos/js/app.js"></script>
-    
     </head>    
 <body>
     <div style="margin:10px;">
@@ -32,6 +31,15 @@ $(document).ready(function(){
     $('#fileLibrary').load('/jquery-photos/js/file.library/file_library.html');
     $('.upload-file').selectImages({
                 multiple: true
+            });
+               // 图片列表拖动
+               $('.uploader-list').DDSort({
+                target: '.file-item',
+                delay: 100, // 延时处理，默认为 50 ms，防止手抖点击 A 链接无效
+                floatStyle: {
+                    'border': '1px solid #ccc',
+                    'background-color': '#fff'
+                }
             });
 })
 </script>
